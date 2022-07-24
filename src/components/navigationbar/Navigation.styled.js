@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background: var(--icons-pink-color);
+  background: green;
   font-family: var(--poppins);
   font-size: 13px;
   font-weight: 500;
