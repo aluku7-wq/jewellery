@@ -5,7 +5,10 @@ import {
   decquantity,
   removeitem,
   clearcart,
+  scroll,
 } from "../actions/Actions";
+
+// shopping cart action creators
 export const addToCart = (data) => {
   return { type: addtocart, payload: data };
 };
@@ -20,4 +23,9 @@ export const removeItem = (data) => {
 };
 export const clearCart = (data) => {
   return { type: clearcart, payload: data };
+};
+
+// scroll action creators
+export const controllScroll = () => {
+  return { type: scroll };
 };

@@ -4,7 +4,6 @@ import React from "react";
 import { Container } from "./Cartcard.styled";
 import { MdAdd, MdClose } from "react-icons/md";
 import { HiMinusSm } from "react-icons/hi";
-import { RiDeleteBinFill } from "react-icons/ri";
 import {
   incQuantity,
   decQuantity,
@@ -18,13 +17,16 @@ const Cartcard = ({ cart, dispatchcart }) => {
         return (
           <div className="cart_cards" key={index}>
             <div className="product">
-              <img src={`../images/products/${item.images[0].name}`} alt="" />
+              <div className="image_container">
+                <img src={`../images/products/${item.images[0].name}`} alt="" />
+              </div>
+
               <div className="text">
                 <h5>{item.name}</h5>
                 <p>ksh. {item.price * item.quantity}</p>
               </div>
             </div>
-            <div className="quanity">
+            <div className="quantity">
               <div
                 className="button"
                 onClick={() => {
@@ -39,7 +41,7 @@ const Cartcard = ({ cart, dispatchcart }) => {
               <p>
                 {item.quantity < 10 && 0}
                 {item.quantity}
-              </p>{" "}
+              </p>
               <div
                 className="button"
                 onClick={() => dispatchcart(incQuantity(item))}>

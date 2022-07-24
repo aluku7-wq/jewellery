@@ -9,6 +9,7 @@ export const Container = styled.div`
   min-height: 100vh;
   .empty_cart {
     padding-top: 50px;
+    margin-bottom: 80px;
     p {
       margin-bottom: 40px;
       font-weight: 700;
@@ -21,26 +22,24 @@ export const Container = styled.div`
       padding: 5px 20px;
       font-size: 14px;
       font-weight: 500;
-      border-radius: 15px;
+      cursor: pointer;
     }
   }
   .body {
     display: flex;
     width: 100%;
-    margin-top: 50px;
+    padding: 50px 20px;
     justify-content: space-between;
     .cart {
-      display: flex;
-      flex-direction: column;
       width: 63%;
-      height: 350px;
+      max-height: 400px;
       overflow-y: scroll;
     }
     .checkout {
       background: var(--background-light);
       width: 32%;
       border-radius: 5px;
-      height: 350px;
+      min-height: 350px;
       display: flex;
       flex-direction: column;
       .checkout_container {
@@ -76,5 +75,19 @@ export const Container = styled.div`
   }
   .footer {
     margin-top: auto;
+  }
+  @media screen and (max-width: 767px) {
+    .body {
+      flex-direction: column;
+      .cart {
+        width: 100%;
+      }
+      .checkout {
+        width: 100%;
+        margin-top: 40px;
+        min-height: 100px;
+        padding: 20px 0;
+      }
+    }
   }
 `;

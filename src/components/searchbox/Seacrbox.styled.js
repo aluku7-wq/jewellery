@@ -2,76 +2,174 @@
 
 import styled from "styled-components";
 export const Container = styled.div`
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #fff;
-  padding-top: 30px;
-  background: rgba(0, 0, 0, 0.5);
-  overflow-y: scroll;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-
-  .body {
-    width: 70%;
-    background-color: #fff;
-    max-height: 70vh;
-    overflow-y: scroll;
-    min-height: 150px;
+  width: 100%;
+  height: 45px;
+  .input_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: #fff;
+    .icon {
+      font-size: 20px;
+    }
+    .close_btn {
+      text-align: right;
+      font-size: 22px;
+    }
+    input {
+      text-align: left;
+      padding: 0 20px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      height: 30px;
+      border-radius: 5px;
+      align-self: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 17px;
+    }
+    input::placeholder {
+      color: rgba(254, 254, 254, 0.8);
+      font-size: 17px;
+      font-weight: 600;
+    }
+  }
+  .dropdown_container {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 45px;
+    width: 100%;
+    font-family: var(--poppins);
+    font-size: 14px;
+    color: var(--text-light-color);
     display: flex;
     flex-direction: column;
-
-    .input_container {
-      min-height: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      max-height: auto;
-      /* position: fixed; */
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    .container {
       background-color: #fff;
-      width: 100%;
+      width: 40%;
+      margin: auto;
+      margin-top: 0;
+      overflow: scroll;
+      padding: 20px;
+      max-height: 50vh;
+      border-bottom: 20px solid #fff;
+      border-radius: 0 0 20px 20px;
+      .quick_links {
+        display: flex;
+        flex-direction: column;
 
-      .close_btn {
-        text-align: right;
-        padding: 20px 40px 0;
-        width: 100%;
+        a {
+          color: black;
+          text-align: left;
+          padding: 0 20px;
+          margin: 10px 0;
+        }
+        a:hover {
+          background-color: var(--background-light);
+        }
       }
-      input {
+      h3 {
         text-align: left;
-        padding: 0 20px;
-        border: none;
-        outline: none;
-        background-color: rgba(0, 0, 0, 0.05);
-        height: 30px;
-        border-radius: 5px;
+        margin-bottom: 20px;
       }
-    }
-    .dropdown_container {
-      width: 100%;
-      padding-top: 50px;
-      font-family: var(--poppins);
-      font-size: 14px;
-      color: var(--text-light-color);
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      .card {
-        margin: 0;
-        height: 100px;
+      .search_card {
+        height: 40px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 80%;
         gap: 20px;
-        padding: 20px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        color: #000;
 
         img {
-          width: 10%;
+          width: 30px;
+          border: 1px solid rgba(0, 0, 0, 0.05);
         }
         p {
           text-align: left;
+          font-size: 12px;
+        }
+      }
+      .search_card:hover {
+        background-color: var(--background-light);
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .input_container {
+      background: rgba(254, 254, 254, 0.2);
+      border-radius: 5px;
+      width: auto;
+      margin: 0 10px;
+      padding: 0 20px;
+      justify-content: left;
+      .icon {
+        margin-bottom: -3px;
+      }
+      input {
+        font-size: 14px;
+      }
+      input::placeholder {
+        font-size: 14px;
+      }
+      .close_btn {
+        display: none;
+      }
+    }
+    .dropdown_container {
+      top: 90px;
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        background: var(--icons-pink-color);
+        .quick_links {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            color: #fff;
+            text-align: left;
+            padding: 0 20px;
+            margin: 10px 0;
+          }
+          a:hover {
+            background-color: rgba(254, 254, 254, 0.2);
+          }
+        }
+        h3 {
+          text-align: left;
+          color: #fff;
+        }
+        .search_card {
+          margin: 0;
+          height: 40px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          padding: 0 20px;
+          color: #fff;
+
+          img {
+            width: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+          }
+          p {
+            text-align: left;
+            font-size: 12px;
+          }
+        }
+        .search_card:hover {
+          background-color: rgba(254, 254, 254, 0.2);
         }
       }
     }

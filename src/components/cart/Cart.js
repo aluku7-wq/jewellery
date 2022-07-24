@@ -23,7 +23,7 @@ const Cart = () => {
       </div>
       {cartTotalItems < 1 ? (
         <div className="empty_cart">
-          <p> you have nothing in your cart ?</p>
+          <p> you have nothing in your cart !</p>
           <Link to="/allproducts">shop now</Link>
         </div>
       ) : (

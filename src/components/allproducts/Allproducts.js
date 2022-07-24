@@ -1,7 +1,8 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
-import { CgMenuGridR, CgLayoutList } from "react-icons/cg";
+import React, { useState, useEffect, useContext } from "react";
+import { jewelleryContext } from "../statemaneger/contextapi/Context";
+import { CgMenuGridR } from "react-icons/cg";
 import { FaList } from "react-icons/fa";
 import Navigation from "../navigationbar/Navigation";
 import { Container } from "./Allproducts.styled";
@@ -17,11 +18,16 @@ const Allproducts = () => {
   const [paginated, setpaginated] = useState([]);
   const [title, settitle] = useState("variety");
   const [gridview, setgridview] = useState(true);
+  const { scroll } = useContext(jewelleryContext);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <Container>
+    <Container
+      style={{
+        height: scroll ? "100vh" : null,
+        overflow: scroll ? "hidden" : null,
+      }}>
       <div className="header">
         <Navigation />
         <div className="page_heading">

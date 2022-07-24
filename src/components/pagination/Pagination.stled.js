@@ -3,7 +3,7 @@
 import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
-  width: 350px;
+  max-width: 350px;
   margin: auto;
   align-items: center;
   justify-content: space-between;
@@ -21,13 +21,12 @@ export const Container = styled.div`
   }
   .page_container {
     margin-top: -8px;
-    width: 150px;
+    width: 100px;
 
     .buttons {
-      display: flex;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       background: var(--background-light);
-      padding: 0 5px;
       border-radius: 20px;
       justify-content: space-between;
       width: 100%;
@@ -35,7 +34,13 @@ export const Container = styled.div`
       .page {
         align-items: center;
         display: flex;
+        text-align: center;
         height: 25px;
+        height: 30px;
+        /* width: 25px; */
+
+        /* background-color: blue; */
+        justify-content: center;
 
         p {
           width: 20px;

@@ -20,4 +20,7 @@ export const Container = styled.div`
     align-items: center;
     padding: 5px 10px;
   }
+  .option:hover {
+    background: #fff;
+  }
 `;

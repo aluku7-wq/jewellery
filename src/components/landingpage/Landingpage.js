@@ -1,6 +1,7 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import { useState, useContext } from "react";
+import { jewelleryContext } from "../statemaneger/contextapi/Context";
 import { Container } from "./Landingpage.styled";
 import Navigation from "../navigationbar/Navigation";
 import { Link } from "react-router-dom";
@@ -8,6 +9,7 @@ import { jewellery } from "../utils/data";
 import Footer from "../footer/Footer";
 
 const Landingpage = () => {
+  const { scroll } = useContext(jewelleryContext);
   const recent_products = jewellery.slice(0, 3);
   const best_sellers = jewellery.slice(
     jewellery.length - 4,
@@ -24,7 +26,11 @@ const Landingpage = () => {
   window.addEventListener("scroll", changenavColor);
 
   return (
-    <Container>
+    <Container
+      style={{
+        height: scroll ? "100vh" : null,
+        overflow: scroll ? "hidden" : null,
+      }}>
       {/* top navigation */}
       <div
         className="top_bar"
@@ -38,11 +44,10 @@ const Landingpage = () => {
       <div
         className="hero_section"
         onScroll={(e) => console.log("scrolling!", e.target.scrollTop)}>
-        <div className="background_image">
-          <div className="overlay">
-            <h1 className="landing_heading">
-              The essence of elegance and class in one place
-            </h1>
+        <div className="overlay">
+          <div className="hero_text">
+            <h1>Aluku jewellery</h1>
+            <h3>The essence of elegance and class in one place</h3>
             <Link to="/allproducts">
               <button className="home_btn">shop now</button>
             </Link>
@@ -50,7 +55,7 @@ const Landingpage = () => {
         </div>
       </div>
       {/* recent products section */}
-      {/* <div className="recent_section">
+      <div className="recent_section">
         <h3>Recent jewellery</h3>
         <div className="container">
           {recent_products.map((jewell, index) => {
@@ -72,9 +77,9 @@ const Landingpage = () => {
         <Link to="/allproducts">
           <button className="recent_button">shop all</button>
         </Link>
-      </div> */}
+      </div>
       {/* burner one section */}
-      {/* <div className="burner_one">
+      <div className="burner_one">
         <div className="overlay">
           <h2>
             your ultimate destination to a avariety of jewellery collection
@@ -83,9 +88,9 @@ const Landingpage = () => {
             <button>browse now</button>
           </Link>
         </div>
-      </div> */}
+      </div>
       {/* best sellers section */}
-      {/* <div className="best_sellers">
+      <div className="best_sellers">
         <h3>Best sellers</h3>
         <div className="container">
           {best_sellers.map((item, index) => {
@@ -101,9 +106,9 @@ const Landingpage = () => {
         <Link to="/allproducts">
           <button>shop all</button>
         </Link>
-      </div> */}
+      </div>
       {/* footer section */}
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 };

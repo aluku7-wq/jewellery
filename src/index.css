@@ -4,20 +4,23 @@
 :root {
   --sections-bg-color: #dfe0e2;
   --text-dark-color: #363946;
-  --text-light-color: #fff;
-  --icons-pink-color: #f564a9;
+  --text-light-color: rgb(0, 0, 0);
+  --icons-pink-color: #fd5866;
   --poppins: "Poppins", sans-serif;
   --aclonica: "Aclonica", sans-serif;
   --background-light: rgb(245, 245, 245);
-  --bacground-overlay: rgba(117, 117, 117, 0.664);
+  --bacground-overlay: rgba(204, 204, 204, 0.192);
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-align: center;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+  user-select: none;
 }
 
 *::-webkit-scrollbar {
@@ -27,9 +30,7 @@
   max-width: 1200px;
   margin: auto;
 }
-.icons {
-  color: var(--text-light-color);
-}
+
 .dark_btn {
   border-radius: 20px;
 }
@@ -52,7 +53,6 @@ button {
   outline: none;
   margin: auto;
   padding: 10px 20px;
-  border-radius: 20px;
   color: #fff;
   font-weight: 700;
 }
@@ -63,7 +63,6 @@ button {
 .card img {
   width: 100%;
   border: 0.5px solid rgba(0, 0, 0, 0.02);
-  margin-bottom: 20px;
 }
 .card p {
   width: 80%;

@@ -7,7 +7,6 @@ import { jewellery } from "../utils/data";
 
 const Filter = ({ settitle, setfiltered }) => {
   const [dropdown, setdropdown] = useState(false);
-  const options = jewellery.map((item) => item.category);
   let unique = [...new Set(jewellery.map((item) => item.category))];
   const handleFilter = (opt) => {
     if (opt === "variety") {

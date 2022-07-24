@@ -10,7 +10,9 @@ const List = ({ products }) => {
       {products.map((item, index) => {
         return (
           <Link to={`/allproducts/${item.id}`} className="card" key={index}>
-            <img src={`../images/products/${item.images[0].name}`} alt="" />
+            <div className="image_container">
+              <img src={`../images/products/${item.images[0].name}`} alt="" />
+            </div>
             <div className="text">
               <p>{item.name}</p>
               <p className="price">ksh. {item.price}</p>

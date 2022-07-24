@@ -70,7 +70,7 @@ const Pagination = ({ filtered, setfiltered, setpaginated }) => {
                   <p
                     style={{
                       backgroundColor:
-                        currentpage === number ? "#f564a9" : null,
+                        currentpage === number ? "#fd5866" : null,
                       color: currentpage === number ? "#fff" : null,
                     }}>
                     {number}

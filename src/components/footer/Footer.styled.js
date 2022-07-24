@@ -3,18 +3,18 @@
 import styled from "styled-components";
 export const Container = styled.div`
   background-color: var(--background-light);
-  display: grid;
+  display: flex;
   font-family: var(--poppins);
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 3fr 1fr;
-  margin-top: 40px;
+  flex-wrap: wrap;
   padding: 40px 0;
   align-items: center;
+  justify-content: space-around;
 
   h4 {
     font-size: 14px;
   }
   .section {
+    flex-basis: 33.3%;
     display: flex;
     flex-direction: column;
     a {
@@ -23,32 +23,22 @@ export const Container = styled.div`
   }
   .two {
     text-align: left;
-    .log_container {
-      a {
-        width: 100px;
-        margin: auto;
-
-        .logo {
-          font-size: 16px;
-        }
-      }
-    }
+    max-width: 250px;
     h4 {
       margin: 10px 0;
     }
-    .contact {
-      a {
-        display: flex;
-        margin-left: 30%;
-        align-items: center;
-        line-height: 35px;
 
-        p {
-          font-size: 14px;
-          font-family: var(--poppins);
-          color: var(--text-light-color);
-          margin-left: 20px;
-        }
+    a {
+      display: flex;
+      align-items: center;
+      line-height: 35px;
+      /* justify-content: space-between; */
+
+      p {
+        font-size: 14px;
+        font-family: var(--poppins);
+        color: var(--text-light-color);
+        margin-left: 20px;
       }
     }
   }
@@ -60,15 +50,54 @@ export const Container = styled.div`
   .four {
     padding-top: 30px;
     margin: auto;
-    display: flew;
+    display: flex;
     height: 40px;
+    flex-direction: row;
     align-items: center;
-    font-family: var(--poppins);
+    font-family: var(--aclonica);
     grid-column: 1/4;
     color: var(--text-dark-color);
+    opacity: 0.4;
+    justify-content: center;
+    font-size: 12px;
+    .copyrigt {
+      margin-top: -3px;
+    }
     p {
       margin: 0 10px;
       font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 885px) {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    gap: 40px;
+    .contact {
+      /* width: 100vw; */
+      a {
+        display: flex;
+        margin: 0;
+        align-items: center;
+        line-height: 35px;
+        text-align: center;
+        width: 100%;
+        p {
+          font-size: 14px;
+          font-family: var(--poppins);
+          color: var(--text-light-color);
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 330px) {
+    .four {
+      font-size: 8px;
+
+      .copyrigt {
+        font-size: 16px;
+      }
     }
   }
 `;

@@ -12,8 +12,7 @@ import { addToCart } from "../statemaneger/actioncreators/ActionCreators";
 import { useContext } from "react";
 
 const Singleproduct = () => {
-  const { cart, dispatchcart } = useContext(jewelleryContext);
-  console.log(cart);
+  const { dispatchcart, scroll } = useContext(jewelleryContext);
   const { id } = useParams();
   const singleproduct = jewellery.find((item) => item.id === parseInt(id));
   singleproduct.quantity = 1;
@@ -21,10 +20,13 @@ const Singleproduct = () => {
     (jewell) => jewell.category === singleproduct.category
   );
   const [imageIndex, setimageIndex] = useState(0);
-  const handleImages = () => {};
 
   return (
-    <Container>
+    <Container
+      style={{
+        height: scroll ? "100vh" : null,
+        overflow: scroll ? "hidden" : null,
+      }}>
       <div className="header">
         <Navigation />
       </div>

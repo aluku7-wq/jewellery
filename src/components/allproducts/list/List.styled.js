@@ -11,19 +11,35 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding-right: 200px;
     align-items: center;
     justify-content: space-between;
-    /* padding: 20px; */
     box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
-    img {
-      width: 300px;
-      margin: 0;
+    .image_container {
+      width: 50%;
+      text-align: left;
+      img {
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+      }
     }
     .text {
+      width: 50%;
       p {
         text-align: left;
       }
+      p:nth-child(2) {
+        font-weight: 700;
+      }
+    }
+  }
+  @media screen and (max-width: 860px) {
+    .image_container {
+      width: 30%;
+    }
+    .text {
+      width: 70%;
+      font-size: 14px;
     }
   }
 `;

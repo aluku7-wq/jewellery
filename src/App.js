@@ -1,27 +1,33 @@
 /** @format */
 
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import Landingpage from "./components/landingpage/Landingpage";
-import Allproducts from "./components/allproducts/Allproducts";
-import { Context } from "./components/statemaneger/contextapi/Context";
-import Singleproduct from "./components/singleproduct/Singleproduct";
-import Nonroute from "./components/nonroute/Nonroute";
 import ScrollToTop from "./components/scrolltop/ScrollToTop";
-import Cart from "./components/cart/Cart";
+import { Context } from "./components/statemaneger/contextapi/Context";
+import { Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
+
+const Landingpage = lazy(() => import("./components/landingpage/Landingpage"));
+const Allproducts = lazy(() => import("./components/allproducts/Allproducts"));
+const Nonroute = lazy(() => import("./components/nonroute/Nonroute"));
+const Cart = lazy(() => import("./components/cart/Cart"));
+const Singleproduct = lazy(() =>
+  import("./components/singleproduct/Singleproduct")
+);
 
 function App() {
   return (
     <div className="App">
       <ScrollToTop>
         <Context>
-          <Routes>
-            <Route path="/allproducts" element={<Allproducts />} />
-            <Route path="/allproducts/:id" element={<Singleproduct />} />
-            <Route path="/" element={<Landingpage />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="*" element={<Nonroute />} />
-          </Routes>
+          <Suspense fallback={<h1>loading</h1>}>
+            <Routes>
+              <Route path="/allproducts" element={<Allproducts />} />
+              <Route path="/allproducts/:id" element={<Singleproduct />} />
+              <Route path="/" element={<Landingpage />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="*" element={<Nonroute />} />
+            </Routes>
+          </Suspense>
         </Context>
       </ScrollToTop>
     </div>
