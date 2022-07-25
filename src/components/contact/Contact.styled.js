@@ -33,6 +33,7 @@ export const Container = styled.div`
       }
     }
     .message {
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       background: var(--background-light);
