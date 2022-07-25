@@ -25,7 +25,7 @@ const Searchbox = ({ searchstate, setsearchstate }) => {
   }, [search]);
 
   useEffect(() => {
-    if (searchstate) {
+    if (searchstate & (window.innerWidth > 640)) {
       focusRef.current.focus();
     }
   }, [searchstate]);
