@@ -59,14 +59,14 @@ export const Container = styled.div`
     }
 
     input::placeholder {
-      color: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.3);
       text-transform: capitalize;
     }
     textarea {
       min-height: 60px;
     }
     textarea::placeholder {
-      color: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.3);
       text-transform: capitalize;
     }
     button {
