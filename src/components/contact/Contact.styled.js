@@ -73,6 +73,7 @@ export const Container = styled.div`
     button {
       background: var(--icons-pink-color);
       width: 80%;
+      border-radius: 5px;
     }
   }
   .footer {
