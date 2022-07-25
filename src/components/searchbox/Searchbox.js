@@ -78,16 +78,16 @@ const Searchbox = ({ searchstate, setsearchstate }) => {
           ) : (
             <div className="quick_links">
               <h3>quick links</h3>
-              <Link to="" onClick={() => handleDisplay()}>
+              <Link to="/" onClick={() => handleDisplay()}>
                 home
               </Link>
-              <Link to="" onClick={() => handleDisplay()}>
+              <Link to="/allproducts" onClick={() => handleDisplay()}>
                 shop
               </Link>
-              <Link to="" onClick={() => handleDisplay()}>
+              <Link to="/contact" onClick={() => handleDisplay()}>
                 contact
               </Link>
-              <Link to="" onClick={() => handleDisplay()}>
+              <Link to="/cart" onClick={() => handleDisplay()}>
                 cart
               </Link>
             </div>

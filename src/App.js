@@ -10,6 +10,7 @@ const Landingpage = lazy(() => import("./components/landingpage/Landingpage"));
 const Allproducts = lazy(() => import("./components/allproducts/Allproducts"));
 const Nonroute = lazy(() => import("./components/nonroute/Nonroute"));
 const Cart = lazy(() => import("./components/cart/Cart"));
+const Contact = lazy(() => import("./components/contact/Contact"));
 const Singleproduct = lazy(() =>
   import("./components/singleproduct/Singleproduct")
 );
@@ -25,6 +26,7 @@ function App() {
               <Route path="/allproducts/:id" element={<Singleproduct />} />
               <Route path="/" element={<Landingpage />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<Nonroute />} />
             </Routes>
           </Suspense>

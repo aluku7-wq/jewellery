@@ -68,7 +68,7 @@ const Navigation = () => {
           <Link to={"/allproducts"} className="quick_links">
             shop
           </Link>
-          <Link to={""} className="quick_links">
+          <Link to={"/contact"} className="quick_links">
             contacts
           </Link>{" "}
           <div className="search quick_links">
