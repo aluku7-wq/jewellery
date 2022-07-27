@@ -110,6 +110,7 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 640px) {
     background: var(--icons-pink-color);
+    padding-top: 40px;
     .input_container {
       background: rgba(254, 254, 254, 0.2);
       border-radius: 5px;
