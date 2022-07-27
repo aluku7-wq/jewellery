@@ -2,14 +2,21 @@
 
 import styled from "styled-components";
 export const Container = styled.div`
-  width: 100%;
-  height: 45px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.25);
+
   .input_container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 45px;
     background-color: transparent;
     color: #fff;
     .icon {
@@ -39,19 +46,13 @@ export const Container = styled.div`
     }
   }
   .dropdown_container {
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    top: 45px;
-    width: 100%;
     font-family: var(--poppins);
     font-size: 14px;
     color: var(--text-light-color);
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+
     .container {
       background-color: #fff;
       width: 40%;
@@ -71,6 +72,9 @@ export const Container = styled.div`
           text-align: left;
           padding: 0 20px;
           margin: 10px 0;
+          p {
+            text-align: left;
+          }
         }
         a:hover {
           background-color: var(--background-light);
@@ -105,6 +109,7 @@ export const Container = styled.div`
     }
   }
   @media screen and (max-width: 640px) {
+    background: var(--icons-pink-color);
     .input_container {
       background: rgba(254, 254, 254, 0.2);
       border-radius: 5px;
@@ -127,6 +132,7 @@ export const Container = styled.div`
     }
     .dropdown_container {
       top: 90px;
+      background: var(--icons-pink-color);
       .container {
         width: 100%;
         min-height: 100vh;

@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { Container } from "./Seacrbox.styled";
 import { jewellery } from "../utils/data";
 import { MdClose, MdOutlineSearch } from "react-icons/md";
+import { motion } from "framer-motion";
+import { dropAnimation } from "../animation/Animation";
 
 const Searchbox = ({ searchstate, setsearchstate }) => {
   const { dispatchscroll } = useContext(jewelleryContext);
@@ -36,7 +38,7 @@ const Searchbox = ({ searchstate, setsearchstate }) => {
   };
   return (
     <Container>
-      <div className="input_container">
+      <div className="input_container" variants={dropAnimation.containers}>
         <MdOutlineSearch className="icon" />
         <input
           type="text"
@@ -50,7 +52,10 @@ const Searchbox = ({ searchstate, setsearchstate }) => {
       </div>
 
       <div className="dropdown_container" onClick={() => handleDisplay()}>
-        <div className="container" onClick={(e) => e.stopPropagation()}>
+        <motion.div
+          className="container"
+          onClick={(e) => e.stopPropagation()}
+          variants={dropAnimation.containers}>
           {search.length > 0 ? (
             <>
               {suggestions.length > 0 ? (
@@ -77,22 +82,22 @@ const Searchbox = ({ searchstate, setsearchstate }) => {
             </>
           ) : (
             <div className="quick_links">
-              <h3>quick links</h3>
+              <motion.h3 variants={dropAnimation.links}>quick links</motion.h3>
               <Link to="/" onClick={() => handleDisplay()}>
-                home
+                <motion.p variants={dropAnimation.links}> home</motion.p>
               </Link>
               <Link to="/allproducts" onClick={() => handleDisplay()}>
-                shop
+                <motion.p variants={dropAnimation.links}> shop</motion.p>
               </Link>
               <Link to="/contact" onClick={() => handleDisplay()}>
-                contact
+                <motion.p variants={dropAnimation.links}>contact</motion.p>
               </Link>
               <Link to="/cart" onClick={() => handleDisplay()}>
-                cart
+                <motion.p variants={dropAnimation.links}>cart </motion.p>
               </Link>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </Container>
   );

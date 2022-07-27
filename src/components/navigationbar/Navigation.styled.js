@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background: var(--icons-pink-color);
   font-family: var(--poppins);
   font-size: 13px;
   font-weight: 500;
@@ -13,6 +12,7 @@ export const Container = styled.div`
   }
   /* small screen styling */
   .small_screen {
+    background: var(--icons-pink-color);
     display: none;
     min-height: 45px;
     align-items: center;
@@ -65,6 +65,7 @@ export const Container = styled.div`
   }
   /* large screen styling */
   .large_screen {
+    background: var(--icons-pink-color);
     display: flex;
     justify-content: center;
     gap: 10vw;
@@ -106,6 +107,7 @@ export const Container = styled.div`
     width: 100%;
     margin: auto;
     height: 45px;
+    background: var(--icons-pink-color);
   }
   @media screen and (max-width: 640px) {
     flex-direction: column;
@@ -118,7 +120,7 @@ export const Container = styled.div`
     .dropdown {
       width: 100%;
       margin: auto;
-      height: 90px;
+      background-color: transparent;
     }
   }
 `;
