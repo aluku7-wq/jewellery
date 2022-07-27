@@ -17,12 +17,11 @@ const SideDrop = () => {
   const [searchstate, setsearchstate] = useState(false);
 
   const toggleSidebar = () => {
-    // setsearchstate((prev) => !prev);
-    // dispatchscroll(controllScroll());
+    dispatchscroll(controllScroll());
   };
 
   return (
-    <Container onClick={() => dispatchscroll(controllScroll())}>
+    <Container onClick={() => toggleSidebar()}>
       <Searchbox
         setsuggestions={setsuggestions}
         jewellery={jewellery}
