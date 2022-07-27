@@ -31,15 +31,8 @@ const Landingpage = () => {
         height: scroll ? "100vh" : null,
         overflow: scroll ? "hidden" : null,
       }}>
-      {/* top navigation */}
-      <div
-        className="top_bar"
-        style={{
-          background: navbg ? "#fff" : "transparent",
-          boxShadow: navbg ? "rgba(0, 0, 0, 0.05) 0px 1px 5px 0px " : "none",
-        }}>
-        <Navigation />
-      </div>
+      <Navigation />
+
       {/* hero section */}
       <div
         className="hero_section"

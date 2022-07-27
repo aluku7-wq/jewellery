@@ -4,12 +4,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: auto;
-  .top_bar {
-    position: fixed;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-
   /* hero section */
   .hero_section {
     min-height: 90vh;

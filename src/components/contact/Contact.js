@@ -1,15 +1,21 @@
 /** @format */
 
-import React from "react";
+import { useContext } from "react";
 import { Container } from "./Contact.styled";
 import Navigation from "../navigationbar/Navigation";
 import Footer from "../footer/Footer";
 import { MdCall, MdMail, MdLocationOn, MdFacebook } from "react-icons/md";
 import { FaTwitter, FaYoutube, FaCopyright, FaWhatsapp } from "react-icons/fa";
+import { jewelleryContext } from "../statemaneger/contextapi/Context";
 
 const Contact = () => {
+  const { scroll } = useContext(jewelleryContext);
   return (
-    <Container>
+    <Container
+      style={{
+        height: scroll ? "100vh" : null,
+        overflow: scroll ? "hidden" : null,
+      }}>
       <Navigation />
       <div className="body">
         <div className="contact_details">

@@ -9,7 +9,7 @@ import Footer from "../footer/Footer";
 import Cartcard from "./cartcard/Cartcard";
 
 const Cart = () => {
-  const { cart, dispatchcart } = useContext(jewelleryContext);
+  const { scroll, cart, dispatchcart } = useContext(jewelleryContext);
   const cartTotalItems = cart.reduce((total, item) => {
     return total + item.quantity;
   }, 0);
@@ -17,7 +17,11 @@ const Cart = () => {
     return total + item.quantity * item.price;
   }, 0);
   return (
-    <Container>
+    <Container
+      style={{
+        height: scroll ? "100vh" : null,
+        overflow: scroll ? "hidden" : null,
+      }}>
       <div className="top">
         <Navigation />
       </div>
