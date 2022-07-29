@@ -6,7 +6,8 @@ import { controllScroll } from "../statemaneger/actioncreators/ActionCreators";
 import { Container } from "./Seacrbox.styled";
 import { jewellery } from "../utils/data";
 import { MdClose, MdOutlineSearch } from "react-icons/md";
-import { dropAnimation } from "../animation/Animation";
+import { motion } from "framer-motion";
+import { sideAnimation } from "../animation/Animation";
 
 const Searchbox = ({
   searchstate,
@@ -43,7 +44,7 @@ const Searchbox = ({
 
   return (
     <Container onClick={(e) => e.stopPropagation()}>
-      <div className="form">
+      <motion.div variants={sideAnimation.search} className="form">
         <MdOutlineSearch className="search" />
         <input
           type="text"
@@ -55,7 +56,7 @@ const Searchbox = ({
           className="close"
           onClick={() => dispatchscroll(controllScroll())}
         />
-      </div>
+      </motion.div>
     </Container>
   );
 };

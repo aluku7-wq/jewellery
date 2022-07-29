@@ -7,6 +7,8 @@ import { jewelleryContext } from "../statemaneger/contextapi/Context";
 import Navigation from "../navigationbar/Navigation";
 import Footer from "../footer/Footer";
 import Cartcard from "./cartcard/Cartcard";
+import { motion } from "framer-motion";
+import { cartAnimation } from "../animation/Animation";
 
 const Cart = () => {
   const { scroll, cart, dispatchcart } = useContext(jewelleryContext);
@@ -22,20 +24,35 @@ const Cart = () => {
         height: scroll ? "100vh" : null,
         overflow: scroll ? "hidden" : null,
       }}>
-      <div className="top">
-        <Navigation />
-      </div>
+      <Navigation />
+
       {cartTotalItems < 1 ? (
-        <div className="empty_cart">
-          <p> you have nothing in your cart !</p>
-          <Link to="/allproducts">shop now</Link>
-        </div>
+        <motion.div className="empty_cart">
+          <motion.p
+            variants={cartAnimation.empty}
+            initial="hidden"
+            animate="visible">
+            you have nothing in your cart !
+          </motion.p>
+          <Link to="/allproducts">
+            <motion.button
+              variants={cartAnimation.empty}
+              initial="hidden"
+              animate="visible">
+              shop now
+            </motion.button>
+          </Link>
+        </motion.div>
       ) : (
         <div className="body">
           <div className="cart">
             <Cartcard cart={cart} dispatchcart={dispatchcart} />
           </div>
-          <div className="checkout">
+          <motion.div
+            variants={cartAnimation.checkout}
+            initial="closed"
+            animate="open"
+            className="checkout">
             <div className="checkout_container">
               <div className="total_card">
                 <p>subtotal:</p>
@@ -51,7 +68,7 @@ const Cart = () => {
               </div>
             </div>{" "}
             <button>checkout</button>
-          </div>
+          </motion.div>
         </div>
       )}
 

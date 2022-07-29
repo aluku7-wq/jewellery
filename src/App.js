@@ -24,17 +24,18 @@ function App() {
     <div className="App">
       <ScrollToTop>
         <Suspense fallback={<Preloader />}>
-          {scroll && <SideDrop />}
           <AnimatePresence exitBeforeEnter>
-            <Routes location={location} key={location.pathname}>
-              <Route path="/allproducts" element={<Allproducts />} />
-              <Route path="/allproducts/:id" element={<Singleproduct />} />
-              <Route path="/" element={<Landingpage />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<Nonroute />} />
-            </Routes>
+            {scroll && <SideDrop />}
           </AnimatePresence>
+
+          <Routes>
+            <Route path="/allproducts" element={<Allproducts />} />
+            <Route path="/allproducts/:id" element={<Singleproduct />} />
+            <Route path="/" element={<Landingpage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Nonroute />} />
+          </Routes>
         </Suspense>
       </ScrollToTop>
     </div>

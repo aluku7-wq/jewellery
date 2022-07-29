@@ -12,6 +12,8 @@ import Filter from "../filter/Filter";
 import { jewellery } from "../utils/data";
 import Grid from "./grid/Grid";
 import List from "./list/List";
+import { motion, LayoutGroup } from "framer-motion";
+import { allproAnimation } from "../animation/Animation";
 
 const Allproducts = () => {
   const [filtered, setfiltered] = useState(jewellery);
@@ -28,53 +30,66 @@ const Allproducts = () => {
         height: scroll ? "100vh" : null,
         overflow: scroll ? "hidden" : null,
       }}>
-      <div className="header">
+      <motion.div
+        variants={allproAnimation.parent}
+        initial="hidden"
+        animate="visible"
+        exit="hide"
+        className="allproducts">
         <Navigation />
-        <div className="page_heading">
-          <div className="inner_container">
-            <h3>Jewellery</h3>
-            <p>{title}</p>
+        <motion.div variants={allproAnimation.header} className="header">
+          <div className="page_heading">
+            <div className="inner_container">
+              <motion.h3 variants={allproAnimation.headerText}>
+                Jewellery
+              </motion.h3>
+              <motion.p variants={allproAnimation.headerText}>{title}</motion.p>
+            </div>
           </div>
+        </motion.div>
+        <motion.div
+          variants={allproAnimation.innavAnimation}
+          className="inner_navigation">
+          <div className="layout">
+            <CgMenuGridR
+              className="grid"
+              onClick={() => setgridview(true)}
+              style={{ color: gridview ? `#f564a9` : null }}
+            />
+            <FaList
+              className="list"
+              onClick={() => setgridview(false)}
+              style={{ color: !gridview ? `#f564a9` : null }}
+            />
+          </div>
+          <div className="filter">
+            <Filter
+              settitle={settitle}
+              filtered={filtered}
+              setfiltered={setfiltered}
+            />
+          </div>
+        </motion.div>
+
+        <div className="body">
+          <LayoutGroup>
+            {gridview ? (
+              <Grid products={paginated} />
+            ) : (
+              <List products={paginated} />
+            )}
+          </LayoutGroup>
         </div>
-      </div>
-      <div className="inner_navigation">
-        <div className="layout">
-          <CgMenuGridR
-            className="grid"
-            onClick={() => setgridview(true)}
-            style={{ color: gridview ? `#f564a9` : null }}
-          />
-          <FaList
-            className="list"
-            onClick={() => setgridview(false)}
-            style={{ color: !gridview ? `#f564a9` : null }}
-          />
-        </div>
-        <div className="filter">
-          <Filter
-            settitle={settitle}
+        <div className="pagination"></div>
+        <div className="footer_pagination">
+          <Pagination
+            setpaginated={setpaginated}
             filtered={filtered}
             setfiltered={setfiltered}
           />
+          {/* <Footer /> */}
         </div>
-      </div>
-
-      <div className="body">
-        {gridview ? (
-          <Grid products={paginated} />
-        ) : (
-          <List products={paginated} />
-        )}
-      </div>
-      <div className="pagination"></div>
-      <div className="footer_pagination">
-        <Pagination
-          setpaginated={setpaginated}
-          filtered={filtered}
-          setfiltered={setfiltered}
-        />
-        <Footer />
-      </div>
+      </motion.div>
     </Container>
   );
 };

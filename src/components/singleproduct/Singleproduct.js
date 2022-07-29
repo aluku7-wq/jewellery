@@ -10,6 +10,8 @@ import Grid from "../allproducts/grid/Grid";
 import { jewelleryContext } from "../statemaneger/contextapi/Context";
 import { addToCart } from "../statemaneger/actioncreators/ActionCreators";
 import { useContext } from "react";
+import { motion } from "framer-motion";
+import { singleAnimation } from "../animation/Animation";
 
 const Singleproduct = () => {
   const { dispatchcart, scroll } = useContext(jewelleryContext);
@@ -32,7 +34,11 @@ const Singleproduct = () => {
       </div>
       <div className="body">
         <div className="main_page">
-          <div className="image_container">
+          <motion.div
+            variants={singleAnimation.image}
+            initial="hidden"
+            animate="visible"
+            className="image_container">
             <div className="main_image">
               <img
                 src={`../images/products/${singleproduct.images[imageIndex].name}`}
@@ -57,21 +63,38 @@ const Singleproduct = () => {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
           <div className="text">
-            <h3>{singleproduct.name}</h3>
-            <p>
+            <motion.h3
+              variants={singleAnimation.text}
+              initial="hidden"
+              animate="visible">
+              {singleproduct.name}
+            </motion.h3>
+            <motion.p
+              variants={singleAnimation.text}
+              initial="hidden"
+              animate="visible">
               <span>category: </span>
               {singleproduct.category}
-            </p>
-            <button onClick={() => dispatchcart(addToCart(singleproduct))}>
+            </motion.p>
+            <motion.button
+              variants={singleAnimation.text}
+              initial="hidden"
+              animate="visible"
+              onClick={() => dispatchcart(addToCart(singleproduct))}>
               add to cart
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
       <div className="related">
-        <h2>Related Jewellery</h2>
+        <motion.h2
+          variants={singleAnimation.related}
+          initial="hidden"
+          animate="visible">
+          Related Jewellery
+        </motion.h2>
         <div className="products_container">
           <Grid products={related} />
         </div>

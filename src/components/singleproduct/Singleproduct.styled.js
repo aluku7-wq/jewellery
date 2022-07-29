@@ -12,7 +12,7 @@ export const Container = styled.div`
     padding: 20px;
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 100px;
   }
   .main_page {
     display: flex;

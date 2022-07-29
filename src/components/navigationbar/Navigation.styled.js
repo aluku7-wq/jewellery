@@ -2,17 +2,22 @@
 
 import styled from "styled-components";
 export const Container = styled.div`
-  display: flex;
-  font-family: var(--poppins);
-  font-size: 13px;
-  font-weight: 500;
-  background: var(--icons-pink-color);
-  display: flex;
-  justify-content: center;
-  gap: 10vw;
-  align-items: center;
-  min-height: 45px;
-  padding: 0 20px;
+  .navbar {
+    display: flex;
+    font-family: var(--poppins);
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--icons-pink-color);
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    align-items: center;
+    min-height: 45px;
+    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
   .menu {
     color: #fff;
     font-size: 26px;
@@ -50,12 +55,14 @@ export const Container = styled.div`
     }
   }
   @media screen and (max-width: 640px) {
-    justify-content: space-between;
-    .menu {
-      display: flex;
-    }
-    .quick_links {
-      display: none;
+    .navbar {
+      justify-content: space-between;
+      .menu {
+        display: flex;
+      }
+      .quick_links {
+        display: none;
+      }
     }
   }
 `;

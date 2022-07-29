@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   font-family: var(--poppins);
   .body {
-    padding: 100px 0;
+    padding: 150px 0;
     width: 100%;
     display: flex;
     align-items: center;
