@@ -14,6 +14,7 @@ export const Container = styled.div`
     margin: auto;
     justify-content: center;
     gap: 80px;
+    overflow: scroll;
     .contact_details {
       display: flex;
       flex-direction: column;

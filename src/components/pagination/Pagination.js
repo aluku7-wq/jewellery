@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "./Pagination.stled";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
+import { motion } from "framer-motion";
+import { paginateAnimation } from "../animation/Animation";
 
 const Pagination = ({ filtered, setfiltered, setpaginated }) => {
   const [currentpage, setcurrentpage] = useState(1);
@@ -50,46 +52,52 @@ const Pagination = ({ filtered, setfiltered, setpaginated }) => {
 
   return (
     <Container>
-      <div className="buttons">
-        {currentpage > 1 ? (
-          <MdArrowLeft
-            onClick={() => handleButtons("prev")}
-            className="button"
-          />
-        ) : null}
-      </div>
-      <div className="page_container">
+      <motion.div
+        variants={paginateAnimation}
+        initial="hidden"
+        animate="visible"
+        className="pagination">
         <div className="buttons">
-          {pages.map((number) => {
-            if ((number > minpageNoLimit) & (number < maxpageNoLimit + 1)) {
-              return (
-                <div
-                  className="page"
-                  key={number}
-                  onClick={(e) => handlePages(number)}>
-                  <p
-                    style={{
-                      backgroundColor:
-                        currentpage === number ? "#fd5866" : null,
-                      color: currentpage === number ? "#fff" : null,
-                    }}>
-                    {number}
-                  </p>
-                </div>
-              );
-            }
-          })}
+          {currentpage > 1 ? (
+            <MdArrowLeft
+              onClick={() => handleButtons("prev")}
+              className="button"
+            />
+          ) : null}
         </div>
-      </div>
+        <div className="page_container">
+          <div className="buttons">
+            {pages.map((number) => {
+              if ((number > minpageNoLimit) & (number < maxpageNoLimit + 1)) {
+                return (
+                  <div
+                    className="page"
+                    key={number}
+                    onClick={(e) => handlePages(number)}>
+                    <p
+                      style={{
+                        backgroundColor:
+                          currentpage === number ? "#fd5866" : null,
+                        color: currentpage === number ? "#fff" : null,
+                      }}>
+                      {number}
+                    </p>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </div>
 
-      <div className="buttons">
-        {currentpage < pages.length ? (
-          <MdArrowRight
-            onClick={() => handleButtons("next")}
-            className="button"
-          />
-        ) : null}
-      </div>
+        <div className="buttons">
+          {currentpage < pages.length ? (
+            <MdArrowRight
+              onClick={() => handleButtons("next")}
+              className="button"
+            />
+          ) : null}
+        </div>
+      </motion.div>
     </Container>
   );
 };

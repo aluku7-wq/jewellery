@@ -13,6 +13,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding-top: 100px;
+    overflow: scroll;
   }
   .main_page {
     display: flex;
@@ -25,6 +26,7 @@ export const Container = styled.div`
       .main_image {
         width: 100%;
         text-align: left;
+        overflow: scroll;
         img {
           width: 70%;
           border: 0.5px solid rgba(0, 0, 0, 0.05);

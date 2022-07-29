@@ -87,7 +87,7 @@ const Allproducts = () => {
             filtered={filtered}
             setfiltered={setfiltered}
           />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </motion.div>
     </Container>

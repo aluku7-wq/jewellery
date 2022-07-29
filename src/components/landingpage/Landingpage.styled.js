@@ -270,17 +270,8 @@ export const Container = styled.div`
         background-size: 100%;
         min-height: 90vh;
         .overlay {
-          padding-top: 25vh;
+          padding-top: 15vh;
           min-height: 90vh;
-          .hero_text {
-            margin: auto;
-            h1 {
-              font-size: 20px;
-            }
-            h3 {
-              font-size: 18px;
-            }
-          }
         }
       } /* recent products */
       .recent_section {
@@ -340,18 +331,12 @@ export const Container = styled.div`
         /* hero section */
 
         .hero_section {
-          background-position: center 60vh;
-          background-size: 60vw;
+          background-position: center 65vh;
+          background-size: 65vw;
           min-height: 90vh;
           .overlay {
-            padding-top: 30%;
-            min-height: 90vh;
-            .hero_text {
-              margin: auto;
-              h1 {
-                font-size: 20px;
-              }
-            }
+            padding-top: 15vh;
+            min-height: 100vh;
           }
         }
         /* burner one  section */

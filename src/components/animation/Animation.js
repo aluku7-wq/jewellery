@@ -10,14 +10,14 @@ export const sideAnimation = {
         staggerChildren: 0.1,
       },
     },
-    hide: { opacity: 0, transition: { duration: 1 } },
+    hide: { opacity: 0, transition: { duration: 0.5 } },
   },
   search: {
     hidden: { opacity: 0, scale: 0.75 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 1 },
+      transition: { duration: 0.5 },
     },
     hide: { opacity: 0.5, scale: 0.75, transition: { duration: 0.5 } },
   },
@@ -70,7 +70,11 @@ export const landingAnimation = {
   //recent products section
   recent: {
     hidden: { opacity: 0, scale: 0.75 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 1, delay: 0.5 } },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, delay: 0.5 },
+    },
   },
 };
 
@@ -78,7 +82,7 @@ export const landingAnimation = {
 
 export const allproAnimation = {
   parent: {
-    visible: { transition: { duration: 1 } },
+    visible: { transition: { duration: 0.5 } },
   },
   header: {
     hidden: { opacity: 0, scaleY: 1.5 },
@@ -115,7 +119,7 @@ export const gridAnimation = {
       x: 0,
       y: 0,
       scale: 1,
-      transition: { duration: 0.9 },
+      transition: { duration: 0.5 },
     },
   },
 };
@@ -124,7 +128,7 @@ export const gridAnimation = {
 export const listAnimation = {
   parent: {
     // visible: { transition: { staggerChildren: 0.2 } },
-    hide: { opacity: 0, transition: { duration: 1 } },
+    hide: { opacity: 0, transition: { duration: 0.5 } },
   },
 
   card: {
@@ -133,7 +137,7 @@ export const listAnimation = {
   },
   image: {
     hidden: { x: 400, opacity: 0, scale: 0.5 },
-    visible: { x: 0, opacity: 1, scale: 1, transition: { duration: 1 } },
+    visible: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
   },
   text: {
     hidden: { opacity: 0, x: 50 },
@@ -153,7 +157,7 @@ export const contactAnimation = {
   },
   section: {
     hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: [100, -100, 0], transition: { duration: 1 } },
+    visible: { opacity: 1, x: [100, -100, 0], transition: { duration: 0.5 } },
   },
   message: {
     closed: { opacity: 0, y: 200, scale: 0 },
@@ -161,7 +165,7 @@ export const contactAnimation = {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.7, duration: 1 },
+      transition: { staggerChildren: 0.1, delayChildren: 0.7, duration: 0.5 },
     },
   },
   parts: {
@@ -190,7 +194,7 @@ export const cartAnimation = {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 1 },
+      transition: { duration: 0.5 },
     },
   },
   cart: { visible: { transition: { staggerChildren: 0.1 } } },
@@ -203,7 +207,7 @@ export const cartAnimation = {
       opacity: [0, 0.5, 0.2, 0.1, 1],
       x: [200, -200, 0],
       transition: {
-        duration: 1,
+        duration: 0.5,
       },
     },
   },
@@ -213,7 +217,7 @@ export const cartAnimation = {
       opacity: 0,
       y: 100,
     },
-    open: { scale: 1, opacity: 1, y: 0, transition: { duration: 1 } },
+    open: { scale: 1, opacity: 1, y: 0, transition: { duration: 0.5 } },
   },
 };
 //  single page animation
@@ -229,7 +233,7 @@ export const singleAnimation = {
       opacity: 1,
       x: 0,
       scale: 1,
-      transition: { duration: 1 },
+      transition: { duration: 0.5 },
     },
   },
   text: {
@@ -240,7 +244,7 @@ export const singleAnimation = {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 1 },
+      transition: { duration: 0.5 },
     },
   },
   related: {
@@ -251,7 +255,7 @@ export const singleAnimation = {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 1 },
+      transition: { duration: 0.5 },
     },
   },
 };
@@ -260,11 +264,18 @@ export const footerAnimation = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 1, staggerChildren: 0.2, delay: 0.5 },
+      transition: { duration: 0.5, staggerChildren: 0.2, delay: 0.5 },
     },
   },
   section: {
     hidden: { opacity: 0, scale: 0 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   },
+};
+
+// pagination animation
+
+export const paginateAnimation = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
 };
