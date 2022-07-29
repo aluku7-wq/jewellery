@@ -136,15 +136,15 @@ export const listAnimation = {
     visible: { opacity: 1, transition: { duration: 0.5 } },
   },
   image: {
-    hidden: { x: 400, opacity: 0, scale: 0.5 },
-    visible: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   },
   text: {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, scale: 0 },
     visible: {
       opacity: [0, 0, 0.2, 1],
-      x: 0,
-      transition: { delay: 0.5, duration: 0.5 },
+      scale: 1,
+      transition: { duration: 0.5 },
     },
   },
 };

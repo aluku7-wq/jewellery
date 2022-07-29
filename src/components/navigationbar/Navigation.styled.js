@@ -23,6 +23,9 @@ export const Container = styled.div`
     font-size: 26px;
     display: none;
   }
+  .search {
+    cursor: pointer;
+  }
   a {
     color: #fff;
   }
