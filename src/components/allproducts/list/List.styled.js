@@ -8,6 +8,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: scroll;
     .card {
       width: 100%;
       display: flex;
