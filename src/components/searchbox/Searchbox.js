@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { jewelleryContext } from "../statemaneger/contextapi/Context";
 import { controllScroll } from "../statemaneger/actioncreators/ActionCreators";
 import { Container } from "./Seacrbox.styled";
-import { jewellery } from "../utils/data";
 import { MdClose, MdOutlineSearch } from "react-icons/md";
 import { motion } from "framer-motion";
 import { sideAnimation } from "../animation/Animation";

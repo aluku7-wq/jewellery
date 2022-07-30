@@ -7,7 +7,7 @@ import { jewellery } from "../utils/data";
 import Searchbox from "../searchbox/Searchbox";
 import { motion } from "framer-motion";
 import { sideAnimation } from "../animation/Animation";
-import { MdClose, MdOutlineSearch } from "react-icons/md";
+import { MdOutlineSearch } from "react-icons/md";
 import { jewelleryContext } from "../statemaneger/contextapi/Context";
 import { controllScroll } from "../statemaneger/actioncreators/ActionCreators";
 
